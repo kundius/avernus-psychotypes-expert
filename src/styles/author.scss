@@ -1,0 +1,112 @@
+@import "responsive";
+
+.section-author {
+  background: #080808 url("../images/section-author-bg-large.jpg") no-repeat 50%
+    0;
+  padding: 71px 0 41px;
+  @include below(lg) {
+    padding: 52px 0 10px;
+    // background: #030303 url("../images/section-author-bg-tablet.jpg") no-repeat
+    //   50% 0;
+    // background-size: 100% auto;
+  }
+  @include below(md) {
+    padding-top: 29px;
+    padding-bottom: 39px;
+    background: #080808 url("../images/section-author-bg-mobile.jpg") no-repeat
+      50% 0;
+    background-size: auto;
+  }
+}
+.section-author__title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 80px;
+  @include below(lg) {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  @include below(md) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+.section-author__title span {
+  display: block;
+  color: #e0c48f;
+  font-size: 24px;
+  @include below(md) {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+}
+.section-author__items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: section;
+  @include below(lg) {
+    margin: 0 auto;
+  }
+}
+.section-author__items li {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  position: relative;
+  margin: 40px 0;
+  padding: 13px 0 16px 86px;
+  width: 100%;
+  box-sizing: border-box;
+  @include below(lg) {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  @include below(md) {
+    margin: 10px 0;
+    padding: 3px 0 5px 45px;
+  }
+  &::before {
+    counter-increment: section;
+    content: counter(section);
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 2px 4px 7px 1px rgba(0, 0, 0, 0.34);
+    background-color: #e0c48f;
+    position: absolute;
+    color: #000000;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 34px;
+    text-transform: uppercase;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include below(md) {
+      font-size: 18px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      left: 6px;
+    }
+  }
+  &::after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #e0c48f;
+    position: absolute;
+    left: 58px;
+    top: 0;
+    bottom: 0;
+    @include below(md) {
+      left: 37px;
+    }
+  }
+}
