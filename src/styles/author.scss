@@ -1,21 +1,16 @@
 @import "responsive";
 
 .section-author {
-  background: #080808 url("../images/section-author-bg-large.jpg") no-repeat 50%
-    0;
+  background: #000000 url("../images/section-author-bg-large.jpg") no-repeat 50% 0;
   padding: 71px 0 41px;
   @include below(lg) {
-    padding: 52px 0 10px;
-    // background: #030303 url("../images/section-author-bg-tablet.jpg") no-repeat
-    //   50% 0;
-    // background-size: 100% auto;
+    padding: 32px 0 10px;
+    background: #0b0e13 url("../images/section-author-bg-tablet.jpg") no-repeat 50% 0;
   }
   @include below(md) {
     padding-top: 29px;
     padding-bottom: 39px;
-    background: #080808 url("../images/section-author-bg-mobile.jpg") no-repeat
-      50% 0;
-    background-size: auto;
+    background: #01060c url("../images/section-author-bg-mobile.jpg") no-repeat 50% 0;
   }
 }
 .section-author__title {
@@ -28,7 +23,7 @@
   margin-bottom: 80px;
   @include below(lg) {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 26px;
   }
   @include below(md) {
     font-size: 24px;
@@ -64,6 +59,7 @@
   width: 100%;
   box-sizing: border-box;
   @include below(lg) {
+    margin: 26px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   }
   @include below(md) {

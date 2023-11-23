@@ -1,0 +1,461 @@
+.stages {
+  background: #000000 url('../images/section-stages-bg-large.jpg') no-repeat 50% 0;
+  background-size: 2000px 1025px;
+  padding-top: 68px;
+  padding-bottom: 65px;
+
+  @include below(xl) {
+    padding-top: calc(68px * 0.8);
+    padding-bottom: calc(65px * 0.8);
+    background-size: calc(2000px * 0.8) calc(1025px * 0.8);
+  }
+  @include below(lg) {
+    padding-top: 42px;
+    padding-bottom: 46px;
+    background-image: url('../images/section-stages-bg-medium.jpg');
+    background-size: 1000px 1031px;
+  }
+  @include below(md) {
+    padding-top: 25px;
+    padding-bottom: 37px;
+  }
+}
+
+.stages__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.stages__title {
+  font-size: 48px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+
+  @include below(xl) {
+    font-size: calc(48px * 0.8);
+  }
+  @include below(md) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+.stages__title div:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transform: scaleY(-1);
+  color: rgba(26, 45, 61, 0.7);
+  opacity: 0.7;
+}
+
+.stages__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 143px;
+
+  @include below(xl) {
+    margin-top: calc(143px * 0.8);
+  }
+  @include below(lg) {
+    margin-top: 82px;
+  }
+  @include below(md) {
+    margin-top: 24px;
+  }
+}
+
+.stages__order {
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+
+  @include below(xl) {
+    margin-top: calc(55px * 0.8);
+  }
+  @include below(lg) {
+    margin-top: 47px;
+  }
+  @include below(md) {
+    order: 10;
+    margin-top: 20px;
+  }
+}
+
+.stages__order-button {
+  width: 355px;
+  max-width: 100%;
+  padding: 12px 24px;
+  min-height: 60px;
+  color: #e0c48f;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 6px 8px 23px 6px rgba(0, 2, 1, 0.62);
+  border-radius: 10px;
+  border: 2px solid #e0c48f;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite linear;
+
+  @include below(xl) {
+    width: calc(355px * 0.8);
+    padding: calc(12px * 0.8) calc(24px * 0.8);
+    min-height: calc(60px * 0.8);
+    font-size: calc(24px * 0.8);
+    border-radius: calc(10px * 0.8);
+  }
+  @include below(lg) {
+    width: 355px;
+    padding: 12px 24px;
+    min-height: 60px;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+  @include below(md) {
+    font-size: 21px;
+    min-height: 54px;
+  }
+}
+
+.stages__order-button:hover {
+  background: #e0c48f;
+  color: #000;
+}
+
+.stages__desc {
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+  color: #ddd;
+  margin-top: 55px;
+
+  @include below(xl) {
+    font-size: calc(24px * 0.8);
+    margin-top: calc(55px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 24px;
+    margin-top: 31px;
+  }
+  @include below(md) {
+    font-size: 18px;
+    margin-top: 30px;
+    line-height: 1.2;
+  }
+}
+
+.stages__item + .stages__item {
+  
+  @include below(md) {
+    margin-top: 16px;
+  }
+}
+
+.stages__item {
+  width: 50%;
+  position: relative;
+
+  @include below(md) {
+    width: 100%;
+  }
+
+  &_1 {
+    text-align: right;
+    padding-right: 148px;
+    padding-top: 2px;
+    @include below(xl) {
+      padding-right: calc(148px * 0.8);
+      padding-top: calc(2px * 0.8);
+    }
+    @include below(lg) {
+      padding-right: 98px;
+    }
+    @include below(md) {
+      padding-top: 0;
+      padding-right: 0;
+      text-align: left;
+    }
+    .stages__item-number {
+      right: 62px;
+      top: 5px;
+      @include below(xl) {
+        right: calc(62px * 0.8);
+        top: calc(5px * 0.8);
+      }
+      @include below(lg) {
+        right: 28px;
+        top: 78px;
+      }
+      @include below(md) {
+        top: 0;
+        right: 0;
+      }
+    }
+    .stages__item-number::before {
+      transform: rotate(-22deg);
+      top: 47px;
+      left: 52px;
+      @include below(xl) {
+        top: calc(47px * 0.8);
+        left: calc(52px * 0.8);
+      }
+      @include below(lg) {
+        top: 47px;
+        left: 52px;
+      }
+      @include below(md) {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &_2 {
+    padding-left: 154px;
+    @include below(xl) {
+      padding-left: calc(154px * 0.8);
+    }
+    @include below(lg) {
+      padding-left: 88px;
+    }
+    @include below(md) {
+      padding-top: 0;
+      padding-left: 0;
+    }
+    .stages__item-number {
+      left: 65px;
+      top: 5px;
+      @include below(xl) {
+        left: calc(65px * 0.8);
+        top: calc(5px * 0.8);
+      }
+      @include below(lg) {
+        left: 18px;
+        top: 79px;
+      }
+      @include below(md) {
+        top: 0;
+        left: 0;
+      }
+    }
+    .stages__item-number::before {
+      transform: rotate(22deg);
+      top: 47px;
+      left: -11px;
+      @include below(xl) {
+        top: calc(47px * 0.8);
+        left: calc(-11px * 0.8);
+      }
+      @include below(lg) {
+        top: 47px;
+        left: -11px;
+      }
+      @include below(md) {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &_3 {
+    text-align: right;
+    padding-right: 148px;
+    padding-top: 136px;
+    @include below(xl) {
+      padding-right: calc(148px * 0.8);
+      padding-top: calc(136px * 0.8);
+    }
+    @include below(lg) {
+      padding-right: 40px;
+      padding-top: 190px;
+    }
+    @include below(md) {
+      padding-top: 0;
+      padding-right: 0;
+      text-align: left;
+    }
+    .stages__item-number {
+      right: 197px;
+      top: 56px;
+      @include below(xl) {
+        right: calc(197px * 0.8);
+        top: calc(56px * 0.8);
+      }
+      @include below(lg) {
+        right: 204px;
+        top: 84px;
+      }
+      @include below(md) {
+        top: 0;
+        right: 0;
+      }
+    }
+    .stages__item-number::before {
+      transform: rotate(-102deg);
+      top: -49px;
+      left: 100px;
+      @include below(xl) {
+        top: calc(-49px * 0.8);
+        left: calc(100px * 0.8);
+      }
+      @include below(lg) {
+        top: -49px;
+        left: 100px;
+      }
+      @include below(md) {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &_4 {
+    padding-left: 154px;
+    padding-top: 136px;
+    @include below(xl) {
+      padding-left: calc(154px * 0.8);
+      padding-top: calc(136px * 0.8);
+    }
+    @include below(lg) {
+      padding-left: 12px;
+      padding-top: 190px;
+    }
+    @include below(md) {
+      padding-top: 0;
+      padding-left: 0;
+    }
+    .stages__item-number {
+      left: 200px;
+      top: 56px;
+      @include below(xl) {
+        left: calc(200px * 0.8);
+        top: calc(56px * 0.8);
+      }
+      @include below(lg) {
+        left: 192px;
+        top: 84px;
+      }
+      @include below(md) {
+        top: 0;
+        left: 0;
+      }
+    }
+    .stages__item-number::before {
+      transform: rotate(101deg);
+      top: -49px;
+      left: -59px;
+      @include below(xl) {
+        top: calc(-49px * 0.8);
+        left: calc(-59px * 0.8);
+      }
+      @include below(lg) {
+        top: -49px;
+        left: -59px;
+      }
+      @include below(md) {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.stages__item-number {
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  border: 3px solid #9ec9de;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 500;
+  color: #9ec9de;
+  position: absolute;
+
+  @include below(xl) {
+    width: calc(59px * 0.8);
+    height: calc(59px * 0.8);
+    font-size: calc(48px * 0.8);
+  }
+  @include below(lg) {
+    width: 60px;
+    height: 60px;
+    font-size: 48px;
+  }
+  @include below(md) {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+}
+
+.stages__item-number::before {
+  content: '';
+  background: url('../images/line.png') no-repeat 50% 50%;
+  background-size: cover;
+  width: 12px;
+  height: 119px;
+  position: absolute;
+
+  @include below(xl) {
+    width: calc(12px * 0.8);
+    height: calc(119px * 0.8);
+  }
+  @include below(lg) {
+    width: 12px;
+    height: 119px;
+  }
+  @include below(md) {
+    display: none;
+  }
+}
+
+.stages__item-title {
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.2;
+
+  @include below(xl) {
+    font-size: calc(30px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 30px;
+    letter-spacing: -0.02em;
+  }
+  @include below(md) {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 24px;
+    letter-spacing: 0;
+  }
+}
+
+.stages__item-desc {
+  font-size: 20px;
+  line-height: 1.2;
+  color: #ddd;
+  margin-top: 18px;
+  letter-spacing: -0.01em;
+  max-width: 100%;
+
+  @include below(xl) {
+    font-size: calc(20px * 0.8);
+    margin-top: calc(18px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 20px;
+    margin-top: 18px;
+  }
+  @include below(md) {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 2px;
+  }
+}

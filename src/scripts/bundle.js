@@ -1,6 +1,7 @@
 import "./forms";
 import "./modals";
 import "./scrolls";
+import "./accordion";
 
 const removeFocusableListener = () => {
   document.querySelector("body").classList.remove("page-focusable");

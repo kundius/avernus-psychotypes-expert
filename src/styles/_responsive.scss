@@ -1,26 +1,6 @@
 @import "variables";
 
 @mixin above($point) {
-  @if $point == mobile {
-    @media (min-width: #{$breakpoint-mobile}) {
-      @content;
-    }
-  }
-  @if $point == tablet {
-    @media (min-width: #{$breakpoint-tablet}) {
-      @content;
-    }
-  }
-  @if $point == desktop {
-    @media (min-width: #{$breakpoint-desktop}) {
-      @content;
-    }
-  }
-  @if $point == xs {
-    @media (min-width: #{$breakpoint-xs}) {
-      @content;
-    }
-  }
   @if $point == sm {
     @media (min-width: #{$breakpoint-sm}) {
       @content;
@@ -43,11 +23,6 @@
   }
   @if $point == xxl {
     @media (min-width: #{$breakpoint-xxl}) {
-      @content;
-    }
-  }
-  @if $point == xxxl {
-    @media (min-width: #{$breakpoint-xxxl}) {
       @content;
     }
   }
@@ -76,26 +51,6 @@
   }
   @if $point == xxl {
     @media (max-width: #{$breakpoint-xxl - 1}) {
-      @content;
-    }
-  }
-  @if $point == xxxl {
-    @media (max-width: #{$breakpoint-xxxl - 1}) {
-      @content;
-    }
-  }
-  @if $point == mobile {
-    @media (max-width: #{$breakpoint-mobile - 1}) {
-      @content;
-    }
-  }
-  @if $point == tablet {
-    @media (max-width: #{$breakpoint-tablet - 1}) {
-      @content;
-    }
-  }
-  @if $point == desktop {
-    @media (max-width: #{$breakpoint-desktop - 1}) {
       @content;
     }
   }

@@ -1,6 +1,20 @@
 @import 'variables';
 @import 'responsive';
 
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    transform: scale(1.05, 1.05);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -27,8 +41,8 @@ img {
 *:focus {
   outline: none;
 }
-.footer-divider {
-  height: 24px;
+.section-divider {
+  height: 16px;
   width: 100%;
   background: url('../images/section-test-submit.jpg') repeat-x 50% -50px;
 }
@@ -71,6 +85,10 @@ img {
   width: 1264px;
   max-width: 100%;
   box-sizing: border-box;
+  @include below(xl) {
+    width: calc(1264px * 0.8);
+    padding: 0 calc(32px * 0.8);
+  }
   @include below(lg) {
     padding: 0 24px;
   }
@@ -90,7 +108,7 @@ img {
   text-align: center;
   white-space: nowrap;
   text-decoration: none;
-  color: #fff;
+  color: #e0c48f;
   font-weight: 500;
   display: inline-block;
   text-transform: uppercase;
@@ -98,9 +116,6 @@ img {
   trabsition-property: color, background, border;
   position: relative;
   z-index: 1;
-  // +below(md)
-  //   line-height: 48px
-  //   font-size: 16px
   &_glow {
     border-color: #fad874;
     border-width: 1px;
@@ -109,7 +124,20 @@ img {
   &:hover {
     color: #000000;
     background: #e0c48f;
-    border-color: #fad874;
+    border-color: #e0c48f;
+  }
+
+  @include below(xl) {
+    font-size: calc(18px * 0.8);
+    padding: calc(20px * 0.8) calc(20px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 18px;
+    padding: 20px 20px;
+  }
+  @include below(md) {
+    font-size: 14px;
+    padding: 15px 15px;
   }
 }
 .ui-button-primary_dark {
@@ -120,6 +148,16 @@ img {
     background: transparent;
   }
 }
+
+.ui-button-primary_filled {
+  color: #000000;
+  background: #e0c48f;
+  &:hover {
+    color: #000000;
+    background: #e0c48f;
+  }
+}
+
 .ui-scrollup {
   position: fixed;
   opacity: 0;
@@ -193,11 +231,6 @@ label.error.error_success {
     display: none;
   }
 }
-.ui-visible-xxxl {
-  @media (max-width: #{$breakpoint-xxxl - 1}) {
-    display: none;
-  }
-}
 .ui-hidden-sm {
   @media (min-width: $breakpoint-sm) {
     display: none;
@@ -220,11 +253,6 @@ label.error.error_success {
 }
 .ui-hidden-xxl {
   @media (min-width: $breakpoint-xxl) {
-    display: none;
-  }
-}
-.ui-hidden-xxxl {
-  @media (min-width: $breakpoint-xxxl) {
     display: none;
   }
 }

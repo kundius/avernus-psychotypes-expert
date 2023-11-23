@@ -1,0 +1,380 @@
+.section-order
+  background: #000000 url('../images/section-order-bg.jpg') no-repeat 50% 0
+  padding-top: 39px
+  padding-bottom: 187px
+  +below(xl)
+    padding-top: calc(39px * 0.8)
+    padding-bottom: calc(187px * 0.8)
+  +below(lg)
+    background-image: url('../images/section-order-bg-medium.jpg')
+    background-size: cover
+    padding-bottom: 51px
+    padding-top: 34px
+  +below(md)
+    padding-bottom: 54px
+    padding-top: 21px
+
+.section-order__title
+  font-size: 30px
+  text-align: center
+  text-transform: uppercase
+  color: #fefefe
+  line-height: 36px
+  font-weight: 500
+  letter-spacing: 0.02em
+  +below(xl)
+    font-size: calc(30px * 0.8)
+    line-height: calc(36px * 0.8)
+  +below(lg)
+    font-size: 24px
+    line-height: 1.25
+  +below(md)
+    font-size: 18px
+    line-height: 22px
+
+.section-order__title::before
+  content: ''
+  width: 56px
+  height: 60px
+  background: url('../images/section-order-title.png') no-repeat 50% 50%
+  background-size: cover
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-bottom: 19px
+  +below(xl)
+    width: calc(56px * 0.8)
+    height: calc(60px * 0.8)
+    margin-bottom: calc(19px * 0.8)
+  +below(lg)
+    width: 56px
+    height: 60px
+    margin-bottom: 27px
+  +below(md)
+    margin-bottom: 13px
+    width: 46px
+    height: 49px
+
+.section-order__title::after
+  content: ''
+  width: 194px
+  height: 3px
+  background: #dec390
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-top: 18px
+  +below(xl)
+    width: calc(194px * 0.8)
+    height: calc(3px * 0.8)
+    margin-top: calc(18px * 0.8)
+  +below(lg)
+    margin-top: 26px
+    width: 194px
+    height: 3px
+  +below(md)
+    margin-top: 9px
+    width: 154px
+    height: 2px
+
+.section-order__desc
+  font-size: 30px
+  color: #dec390
+  line-height: 36px
+  text-align: center
+  margin-top: 16px
+  +below(xl)
+    font-size: calc(30px * 0.8)
+    line-height: calc(36px * 0.8)
+    margin-top: calc(16px * 0.8)
+  +below(lg)
+    font-size: 24px
+    margin-top: 25px
+    line-height: 1.25
+  +below(md)
+    font-size: 18px
+    margin-top: 7px
+    line-height: 22px
+
+.section-order__layout
+  display: flex
+  justify-content: space-between
+  margin-top: 52px
+  max-width: 1148px
+  margin-left: auto
+  margin-right: auto
+  gap: 12px
+  +below(xl)
+    margin-top: calc(52px * 0.8)
+    max-width: calc(1148px * 0.8)
+    gap: calc(12px * 0.8)
+  +below(lg)
+    margin-top: 33px
+    flex-wrap: wrap
+    max-width: 100%
+    gap: 12px
+  +below(md)
+    margin-top: 17px
+
+.section-order__layout__cell
+  display: flex
+  flex-direction: column
+  flex-basis: 100%
+  position: relative
+  +below(lg)
+    flex-basis: 350px
+    margin-left: auto
+    margin-right: auto
+  +below(md)
+    flex-basis: 300px
+
+.section-order__button
+  display: flex
+  justify-content: center
+  margin-top: 32px
+  margin-bottom: 32px
+  position: relative
+  +below(xl)
+    margin-top: calc(32px * 0.8)
+    margin-bottom: calc(32px * 0.8)
+  +below(lg)
+    margin-top: 24px
+    margin-bottom: 24px
+  +below(md)
+    margin-top: 16px
+    margin-bottom: 16px
+  .ui-button-primary
+    width: 304px
+    max-width: 100%
+    +below(xl)
+      width: calc(304px * 0.8)
+    +below(lg)
+      width: 304px
+    +below(md)
+      width: 260px
+
+.section-order__counter
+  margin-top: 88px
+  +below(xl)
+    margin-top: calc(88px * 0.8)
+  +below(lg)
+    margin-top: 57px
+  +below(md)
+    margin-top: 27px
+
+.section-order__counter .countdown-item__title
+  color: #fff
+
+.section-order__counter::after
+  content: ''
+  display: block
+  margin-left: auto
+  margin-right: auto
+  margin-top: 60px
+  width: 229px
+  height: 58px
+  background: url('../images/section-order-bye.png') no-repeat 50% 50%
+  background-size: cover
+  +below(xl)
+    margin-top: calc(60px * 0.8)
+    width: calc(229px * 0.8)
+    height: calc(58px * 0.8)
+  +below(lg)
+    margin-top: 60px
+    width: 229px
+    height: 58px
+  +below(md)
+    margin-top: 42px
+    width: 140px
+    height: 35px
+
+.section-order__counter-title
+  font-size: 24px
+  line-height: 1
+  color: #dec390
+  text-align: center
+  +below(xl)
+    font-size: calc(24px * 0.8)
+  +below(lg)
+    font-size: 24px
+  +below(md)
+    font-size: 16px
+
+.section-order__counter-body
+  display: flex
+  justify-content: center
+  margin-top: 27px
+  +below(xl)
+    margin-top: calc(27px * 0.8)
+  +below(lg)
+    margin-top: 26px
+  +below(md)
+    margin-top: 18px
+    font-size: 72%
+
+.package
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 6px 5px
+  border: 2px solid #ffffff
+  box-shadow: 5.945px 5.353px 7.28px 0.72px rgba(0, 2, 1, 0.64), inset 5.945px 5.353px 7.28px 0.72px rgba(0, 2, 1, 0.64)
+  +below(xl)
+    padding: calc(6px * 0.8) calc(5px * 0.8)
+
+.package__title
+  background-color: #dec390
+  box-shadow: 1.113px 7.922px 5.64px 0.36px rgba(0, 2, 1, 0.45)
+  font-weight: 500
+  font-size: 29px
+  color: #000
+  line-height: 65px
+  text-transform: uppercase
+  text-align: center
+  position: relative
+  +below(xl)
+    font-size: calc(29px * 0.8)
+    line-height: calc(65px * 0.8)
+  +below(lg)
+    font-size: 29px
+    line-height: 65px
+  +below(md)
+    font-size: 24px
+    line-height: 51px
+
+.package__body
+  flex-grow: 1
+  padding: 16px 0
+  +below(xl)
+    padding: calc(16px * 0.8) 0
+  +below(lg)
+    padding: 16px 0
+  +below(md)
+    padding: 14px 0
+
+.package__text
+  font-size: 18px
+  color: #fff
+  line-height: 24px
+  padding: 12px
+  word-wrap: break-word
+  &:nth-child(2n)
+    background: #3c3c3c
+  +below(xl)
+    font-size: calc(18px * 0.8)
+    line-height: calc(24px * 0.8)
+    padding: calc(12px * 0.8)
+  +below(lg)
+    font-size: 18px
+    line-height: 24px
+    padding: 12px
+  +below(md)
+    font-size: 14px
+    line-height: 20px
+    padding: 9px
+
+.package__price
+  background: #fff
+  text-align: center
+  padding: 12px 14px 8px
+  +below(xl)
+    padding: calc(12px * 0.8) calc(14px * 0.8) calc(8px * 0.8)
+  +below(lg)
+    padding: 12px 14px 8px
+
+.package__price-head
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.package__price-date
+  font-size: 18px
+  line-height: 1
+  color: #e94b07
+  text-align: left
+  font-weight: 500
+  +below(xl)
+    font-size: calc(18px * 0.8)
+  +below(lg)
+    font-size: 18px
+  +below(md)
+    font-size: 15px
+
+.package__price-old
+  font-size: 18px
+  line-height: 1
+  color: #000
+  font-weight: 500
+  text-decoration: line-through
+  text-align: left
+  +below(xl)
+    font-size: calc(18px * 0.8)
+  +below(lg)
+    font-size: 18px
+  +below(md)
+    font-size: 15px
+
+.package__price-value
+  font-size: 50px
+  color: #e94b07
+  font-weight: 500
+  line-height: 1
+  width: 100%
+  margin-top: 8px
+  +below(xl)
+    font-size: calc(50px * 0.8)
+    margin-top: calc(8px * 0.8)
+  +below(lg)
+    font-size: 50px
+    margin-top: 8px
+  +below(md)
+    font-size: 38px
+
+.package__prices
+  font-size: 18px
+  color: #fff
+  line-height: 1.35
+  padding: 12px
+  +below(xl)
+    font-size: calc(18px * 0.8)
+    padding: calc(12px * 0.8)
+  +below(lg)
+    font-size: 16px
+    padding: 12px
+  +below(md)
+    font-size: 15px
+    padding: 9px
+
+.package__prices span
+  color: #e94b07
+
+.package_hit .package__body::after
+  content: ''
+  display: block
+  margin-left: auto
+  margin-right: auto
+  width: calc(375px * 0.8)
+  height: calc(208px * 0.8)
+  background: url('../images/hit.png') no-repeat 50% 50%
+  background-size: cover
+  +below(xl)
+    width: calc(375px * 0.64)
+    height: calc(208px * 0.64)
+  +below(lg)
+    width: calc(375px * 0.7)
+    height: calc(208px * 0.7)
+  +below(md)
+    width: calc(375px * 0.6)
+    height: calc(208px * 0.6)
+
+.section-order__mentor
+  margin-top: 70px
+  +below(xl)
+    margin-top: calc(70px * 0.8)
+  +below(lg)
+    margin-top: 89px
+  +below(lg)
+    margin-top: 70px
+  +below(md)
+    margin-top: 20px

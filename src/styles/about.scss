@@ -1,42 +1,35 @@
 .section-about {
-  background: #010204 url("../images/bg-about_plus.jpg") no-repeat 50% 100%;
-  padding-bottom: 58px;
-  padding-top: 28px;
+  background: #000103 url("../images/section-about-bg-large.jpg") no-repeat 50% 0;
+  padding-top: 32px;
 
-  @media (max-width: 1140px) {
-    background-position: 44% 100%;
+  @include below(xl) {
+    padding-top: calc(32px * 0.8);
   }
   @include below(lg) {
-    padding-top: 20px;
-    padding-bottom: 72px;
-    background-image: url('../images/bg-about-tablet.jpg');
-    background-position: 50% 100%;
+    background-image: url('../images/section-about-bg-medium.jpg');
   }
   @include below(md) {
     padding-top: 15px;
-    padding-bottom: 16px;
-    background-image: url('../images/bg-about-mobile.jpg');
-    background-position: 50% 0;
   }
 }
 
 .section-about__container {
 
-  @include below(md) {
-    width: 360px;
-  }
 }
 
 .section-about__headline {
   display: flex;
   align-items: center;
-  margin-bottom: 108px;
+  margin-bottom: 95px;
 
+  @include below(xl) {
+    margin-bottom: calc(95px * 0.8);
+  }
   @include below(lg) {
     margin-bottom: 50px;
   }
   @include below(md) {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 }
 
@@ -45,10 +38,9 @@
   width: 93px;
   margin-right: 14px;
 
-  @include below(lg) {
-    width: 80px;
-    margin-right: 12px;
-    margin-left: 15px;
+  @include below(xl) {
+    width: calc(93px * 0.8);
+    margin-right: calc(14px * 0.8);
   }
   @include below(md) {
     width: 57px;
@@ -62,146 +54,113 @@
   font-size: 24px;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.025em;
 
-  @include below(lg) {
-    font-size: 20px;
-    letter-spacing: 0;
+  @include below(xl) {
+    font-size: calc(24px * 0.8);
   }
   @include below(md) {
     font-size: 15px;
+    letter-spacing: 0;
   }
 }
 
-.section-about__date {
-  color: #ffffff;
+.section-about__author {
+  color: #c3c3c2;
   font-size: 30px;
-  line-height: 1.24;
+  line-height: 1.2;
 
+  span {
+    color: #e0c48f;
+  }
+
+  @include below(xl) {
+    font-size: calc(30px * 0.8);
+  }
   @include below(md) {
     font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
   }
 }
 
 .section-about__title-primary {
-  text-shadow: 3px 5px 6px rgba(0, 2, 1, 0.62);
-  color: #e0c48f;
-  font-size: 67px;
+  text-shadow: 3.441px 4.915px 5.64px rgba(0, 2, 1, 0.62);
+  color: #ffffff;
+  font-size: 74px;
   font-weight: bold;
-  line-height: 1.19;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-top: 40px;
+  margin-top: 24px;
+  letter-spacing: 0.025em;
 
+  @include below(xl) {
+    font-size: calc(74px * 0.8);
+    margin-top: calc(24px * 0.8);
+  }
   @include below(lg) {
-    margin-top: 30px;
+    font-size: 72px;
+    margin-top: 27px;
+    letter-spacing: 0;
+    line-height: 1;
   }
   @include below(md) {
-    font-size: 30px;
-    line-height: 36px;
-    margin-top: 10px;
+    font-size: 44px;
+    margin-top: 13px;
+    line-height: 1.05;
+    font-weight: 500;
   }
 }
+
 
 .section-about__title-secondary {
-  color: #e0c48f;
-  font-size: 36px;
-  line-height: 48px;
-  text-transform: uppercase;
-  margin-top: 10px;
-  width: 520px;
-  max-width: 100%;
+  color: rgb(221, 221, 221);
+  font-size: 30px;
+  line-height: 1.2;
+  margin-top: 3px;
+  text-shadow: 9.177px 13.106px 23.22px rgba(0, 2, 1, 0.44);
 
+  @include below(xl) {
+    font-size: calc(30px * 0.8);
+    margin-top: calc(3px * 0.8);
+  }
   @include below(lg) {
-    font-size: 36px;
-    width: 420px;
+    font-size: 30px;
+    margin-top: 19px;
   }
   @include below(md) {
-    font-size: 18px;
-    line-height: 24px;
-    margin-top: 6px;
-    width: 260px;
+    font-size: 24px;
+    margin-top: 8px;
   }
 }
 
-.section-about__price-wrap {
-  display: flex;
-  justify-content: flex-end;
-  height: 0;
-  width: 598px;
-  max-width: 100%;
+.section-about__order {
+  position: relative;
+  margin-top: 120px;
 
+  @include below(xl) {
+    margin-top: calc(120px * 0.8);
+  }
   @include below(lg) {
-    width: 370px;
+    margin-top: 34px;
   }
   @include below(md) {
-    width: 302px;
+    margin-top: 277px;
   }
 }
 
-.section-about__price {
-  transform: rotate(-9deg);
-  width: min-content;
-  white-space: nowrap;
-  margin-top: -34px;
+.section-about__order-name {
+  position: absolute;
+  left: 380px;
+  top: 0;
 
+  @include below(xl) {
+    left: calc(380px * 0.8);
+  }
   @include below(lg) {
-    margin-top: -20px;
-  }
-  @include below(md) {
-    margin-top: -16px;
+    left: 380px;
   }
 }
 
-.section-about__price-value {
-  text-shadow: 3px 5px 6px rgba(0, 2, 1, 0.62);
-  color: #ffffff;
-  font-size: 45px;
-  line-height: 1;
-  text-decoration: line-through;
-  background: #0c586a;
-  padding: 8px 15px;
-
-  @include below(md) {
-    font-size: 23px;
-  }
-  @include below(md) {
-    padding: 4px 8px;
-  }
-}
-
-.section-about__price-label {
-  text-shadow: 7px 10px 14px rgba(0, 2, 1, 0.74);
-  color: #ed393a;
-  font-size: 36px;
-  line-height: 1;
-  margin-top: 8px;
-  text-align: center;
-
-  @include below(md) {
-    font-size: 18px;
-  }
-  @include below(md) {
-    margin-top: 2px;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1, 1);
-    animation-timing-function: ease-in-out;
-  }
-  50% {
-    transform: scale(1.05, 1.05);
-    animation-timing-function: ease-in-out;
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-.section-about__button {
+.section-about__order-button {
   width: 355px;
   max-width: 100%;
   padding: 12px 24px;
@@ -214,7 +173,6 @@
   box-shadow: 6px 8px 23px 6px rgba(0, 2, 1, 0.62);
   border-radius: 10px;
   border: 2px solid #e0c48f;
-  margin-top: 54px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -222,39 +180,172 @@
   transition: all 0.3s ease;
   animation: pulse 2s infinite linear;
 
+  @include below(xl) {
+    width: calc(355px * 0.8);
+    padding: calc(12px * 0.8) calc(24px * 0.8);
+    min-height: calc(60px * 0.8);
+    font-size: calc(24px * 0.8);
+  }
   @include below(lg) {
-    margin-top: 128px;
+    width: 355px;
+    padding: 12px 24px;
+    min-height: 60px;
+    font-size: 24px;
   }
   @include below(md) {
-    margin-top: 374px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 21px;
+    min-height: 54px;
   }
 }
 
-.section-about__button:hover {
+.section-about__order-button:hover {
   background: #e0c48f;
   color: #000;
 }
 
-.section-about__desc {
-  color: #ffffff;
+.section-about__order-date {
+  color: #dddddd;
   font-size: 30px;
-  line-height: 36px;
-  margin-top: 50px;
-  width: 560px;
-  max-width: 100%;
+  line-height: 1.2;
+  margin-top: 40px;
 
+  @include below(xl) {
+    font-size: calc(30px * 0.8);
+    margin-top: calc(40px * 0.8);
+  }
   @include below(lg) {
-    margin-top: 36px;
-    width: 320px;
+    font-size: 30px;
+    margin-top: 40px;
   }
   @include below(md) {
     font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 15px;
+  }
+}
+
+.section-about__content {
+  line-height: 1.2;
+  font-size: 30px;
+  color: rgb(221, 221, 221);
+  margin-left: -360px;
+  margin-right: -360px;
+  padding-left: 360px;
+  padding-right: 360px;
+  background: url('../images/about-content.png') no-repeat 50% 50%;
+  background-size: auto 100%;
+  padding-top: 27px;
+  padding-bottom: 31px;
+  margin-top: 34px;
+
+  @include below(xl) {
+    font-size: calc(30px * 0.8);
+    padding-top: calc(27px * 0.8);
+    padding-bottom: calc(31px * 0.8);
+    margin-top: calc(34px * 0.8);
+    margin-left: calc(-360px * 0.8);
+    margin-right: calc(-360px * 0.8);
+    padding-left: calc(360px * 0.8);
+    padding-right: calc(360px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 24px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 36px;
+    line-height: 1.25;
+  }
+  @include below(md) {
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 5px;
+    line-height: 1.25;
+  }
+}
+
+.section-about__content-text {
+  max-width: 100%;
+  width: 1060px;
+
+  @include below(xl) {
+    width: calc(1060px * 0.8);
+  }
+}
+
+.rename {
+  display: flex;
+  flex-wrap: wrap;
+  width: 252px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include below(xl) {
+    width: calc(252px * 0.8);
+  }
+  @include below(lg) {
+    width: 252px;
+  }
+}
+
+.rename::before {
+  content: '';
+  order: 2;
+  width: 100%;
+  display: block;
+}
+
+.rename__old {
+  background: url('../images/rename-old.png') no-repeat 50% 50%;
+  background-size: 100% 100%;
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  font-size: 24px;
+  margin: 0 auto;
+  order: 1;
+  padding: 4px 18px;
+
+  @include below(xl) {
+    font-size: calc(24px * 0.8);
+    padding: calc(4px * 0.8) calc(18px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 24px;
+    padding: 4px 18px;
+  }
+}
+
+.rename__new-left {
+  font-size: 90px;
+  line-height: 1;
+  color: #fff;
+  font-weight: bold;
+  order: 3;
+  margin-top: -8px;
+
+  @include below(xl) {
+    font-size: calc(90px * 0.8);
+    margin-top: calc(-8px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 90px;
+    margin-top: -8px;
+  }
+}
+
+.rename__new-right {
+  font-size: 25px;
+  line-height: 1.2;
+  color: #ddd;
+  order: 4;
+  margin-top: 2px;
+
+  @include below(xl) {
+    font-size: calc(25px * 0.8);
+    margin-top: calc(2px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 25px;
+    margin-top: 2px;
   }
 }

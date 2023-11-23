@@ -1,0 +1,217 @@
+.useful {
+  background: #fcfbf9 url('../images/section-schedule-bg-large.jpg') no-repeat 50% 0;
+  padding-top: 63px;
+  padding-bottom: 94px;
+
+  @include below(xl) {
+    padding-top: calc(63px * 0.8);
+    padding-bottom: calc(94px * 0.8);
+  }
+  @include below(lg) {
+    padding-top: 45px;
+    background-image: url('../images/section-schedule-bg-medium.jpg');
+  }
+  @include below(md) {
+    padding-top: 17px;
+    padding-bottom: 32px;
+  }
+}
+
+.useful__title {
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 71px;
+
+  @include below(xl) {
+    font-size: calc(48px * 0.8);
+    margin-bottom: calc(71px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  @include below(md) {
+    font-size: 24px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+}
+
+.useful__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+
+  @include below(xl) {
+    margin-left: calc(-30px * 0.8);
+    margin-top: calc(-30px * 0.8);
+  }
+  @include below(md) {
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+}
+
+.useful__item {
+  padding-left: 30px;
+  padding-top: 30px;
+  width: 50%;
+  display: flex;
+
+  @include below(xl) {
+    padding-left: calc(30px * 0.8);
+    padding-top: calc(30px * 0.8);
+  }
+  @include below(lg) {
+    width: 100%;
+  }
+  @include below(md) {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+}
+
+.useful-item {
+  position: relative;
+  z-index: 10;
+  padding: 29px 25px 27px 25px;
+  width: 100%;
+
+  @include below(xl) {
+    padding: calc(29px * 0.8) calc(25px * 0.8) calc(27px * 0.8) calc(25px * 0.8);
+  }
+  @include below(lg) {
+    max-width: 582px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 20px;
+  }
+  @include below(md) {
+    padding: 16px 18px;
+  }
+}
+
+.useful-item__image {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.22);
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @include below(xl) {
+    border-radius: calc(10px * 0.8);
+  }
+}
+
+.useful__item:nth-child(1) .useful-item__image {
+  background-image: url('../images/useful-1.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-1-s.jpg');
+  }
+}
+
+.useful__item:nth-child(2) .useful-item__image {
+  background-image: url('../images/useful-2.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-2-s.jpg');
+  }
+}
+
+.useful__item:nth-child(3) .useful-item__image {
+  background-image: url('../images/useful-3.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-3-s.jpg');
+  }
+}
+
+.useful__item:nth-child(4) .useful-item__image {
+  background-image: url('../images/useful-4.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-4-s.jpg');
+  }
+}
+
+.useful__item:nth-child(5) .useful-item__image {
+  background-image: url('../images/useful-5.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-5-s.jpg');
+  }
+}
+
+.useful__item:nth-child(6) .useful-item__image {
+  background-image: url('../images/useful-6.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-6-s.jpg');
+  }
+}
+
+.useful__item:nth-child(7) .useful-item__image {
+  background-image: url('../images/useful-7.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-7-s.jpg');
+  }
+}
+
+.useful__item:nth-child(8) .useful-item__image {
+  background-image: url('../images/useful-8.jpg');
+
+  @include below(md) {
+    background-image: url('../images/useful-8-s.jpg');
+  }
+}
+
+.useful-item__title {
+  color: #e0c48f;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.25;
+
+  @include below(xl) {
+    font-size: calc(24px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 24px;
+  }
+  @include below(md) {
+    font-size: 19px;
+  }
+}
+
+.useful-item__desc {
+  font-size: 24px;
+  color: #ddd;
+  line-height: 1.25;
+  margin-top: 20px;
+
+  @include below(xl) {
+    font-size: calc(24px * 0.8);
+    margin-top: calc(20px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  @include below(md) {
+    font-size: 19px;
+    margin-top: 5px;
+  }
+}
