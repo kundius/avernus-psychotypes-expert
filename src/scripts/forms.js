@@ -173,7 +173,11 @@ var individualFormValidator = $("#individual-form").validate({
     },
   },
   errorPlacement: function (error, element) {
-    error.insertAfter(element.parent());
+    if (element.name !== 'action') {
+      error.insertAfter(element.parent());
+    } else {
+      element.after(error);
+    }
   },
   submitHandler: function (form) {
     submitForm(form, individualFormValidator);
