@@ -64,8 +64,8 @@
     right: calc(18px * 0.8);
   }
   @include below(md) {
-    width: 270px;
-    height: 340px;
+    width: 278px;
+    height: 320px;
     position: relative;
     right: 0;
     left: 0;
@@ -234,6 +234,8 @@
 .mentor__button {
   @include below(md) {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -248,7 +250,7 @@
     width: 305px;
   }
   @include below(md) {
-    width: 100%;
+    width: 260px;
   }
 }
 
@@ -274,5 +276,6 @@
   @include below(md) {
     font-size: 30px;
     margin-bottom: 13px;
+    width: 100%;
   }
 }

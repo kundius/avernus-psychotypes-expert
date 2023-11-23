@@ -18,6 +18,8 @@
   @include below(md) {
     padding-top: 25px;
     padding-bottom: 32px;
+    background-image: url('../images/section-features-bg-small.jpg');
+    background-size: 400px 1218px;
   }
 }
 
@@ -34,11 +36,13 @@
     font-size: calc(48px * 0.8);
   }
   @include below(lg) {
-    font-size: 35px;
+    font-size: 34px;
+    letter-spacing: -0.025em;
   }
   @include below(md) {
     font-size: 24px;
     line-height: 1.25;
+    letter-spacing: 0;
   }
 }
 

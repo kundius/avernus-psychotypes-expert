@@ -10,6 +10,7 @@
   }
   @include below(md) {
     padding-top: 15px;
+    background-image: url('../images/section-about-bg-small.jpg');
   }
 }
 
@@ -157,6 +158,9 @@
   }
   @include below(lg) {
     left: 380px;
+  }
+  @include below(md) {
+    display: none;
   }
 }
 

@@ -75,8 +75,8 @@
       <section class="section-features">
         <div class="ui-container">
           <div class="section-features__title">
-            <div>В ЧЕМ ОСОБЕННОСТЬ ЭКСПЕРТНОГО КУРСА</div>
-            <div>В ЧЕМ ОСОБЕННОСТЬ ЭКСПЕРТНОГО КУРСА</div>
+            <div>В ЧЕМ ОСОБЕННОСТЬ ЭКСПЕРТНОГО&nbsp;КУРСА</div>
+            <div>В ЧЕМ ОСОБЕННОСТЬ ЭКСПЕРТНОГО&nbsp;КУРСА</div>
           </div>
           <div class="section-features__subtitle">
             Профайлинг состоит из&nbsp;трех&nbsp;уровней:
@@ -319,8 +319,8 @@
       <section class="stages">
         <div class="ui-container stages__container">
           <div class="stages__title">
-            <div>КАК БУДЕТ ПРОХОДИТЬ ОБУЧЕНИЕ</div>
-            <div>КАК БУДЕТ ПРОХОДИТЬ ОБУЧЕНИЕ</div>
+            <div>КАК БУДЕТ ПРОХОДИТЬ&nbsp;ОБУЧЕНИЕ</div>
+            <div>КАК БУДЕТ ПРОХОДИТЬ&nbsp;ОБУЧЕНИЕ</div>
           </div>
           <div class="stages__list">
             <div class="stages__item stages__item_1">
@@ -413,7 +413,7 @@
           </div>
           <div class="section-schedule__content">
             Будет вестись запись занятий на случай,<br class="ui-visible-md">
-            если вы пропустите отдельные из них.
+            если&nbsp;вы&nbsp;пропустите отдельные&nbsp;из&nbsp;них.
           </div>
         </div>
       </section>
@@ -531,7 +531,7 @@
 
       <section class="useful">
         <div class="ui-container">
-          <div class="useful__title">КОМУ БУДЕТ ПОЛЕЗНО ОБУЧЕНИЕ:</div>
+          <div class="useful__title">КОМУ БУДЕТ ПОЛЕЗНО&nbsp;ОБУЧЕНИЕ:</div>
           <div class="useful__list">
             <div class="useful__item">
               <div class="useful-item">
@@ -681,7 +681,7 @@
           <div class="section-order__desc">
             Поэтому, если вы хотите обрести спокойствие и гармонию в жизни,<br class="ui-visible-lg">
             стать по-настоящему самостоятельным в решениях,<br class="ui-visible-lg">
-            выбирайте свой формат участия в курсе.
+            выбирайте свой формат участия&nbsp;в&nbsp;курсе.
           </div>
           <div class="section-order__layout">
             <div class="section-order__layout__cell">
@@ -875,7 +875,7 @@
                 </div>
                 <div class="mentor__footer">
                   <div class="mentor__button">
-                    <a href="" class="ui-button-primary ui-button-primary_filled">Оставить заявку</a>
+                    <button class="ui-button-primary ui-button-primary_filled" data-modal-toggle="#individual">Оставить заявку</button>
                   </div>
                   <div class="mentor__price">
                     400 000 руб.
@@ -1381,15 +1381,114 @@
         </div>
       </div>
 
+      <div class="modal modal_offscreen" id="individual">
+        <button class="modal__close" data-modal-close></button>
+        <div class="modal__title">
+          Заявка на индивидуальное сопровождение по курсу «Психотипы. Уровень эксперт»
+        </div>
+        <div class="modal__body">
+          <form
+            action="/email/question"
+            method="post"
+            class="modal-form"
+            id="individual-form"
+          >
+            <input type="hidden" name="action" value="individual-form" />
+            <input
+              type="hidden"
+              name="subject"
+              value='Заявка на индивидуальное сопровождение по курсу «Психотипы. Уровень эксперт»'
+            />
+            <div class="modal-form__row">
+              <label class="ui-inputgroup">
+                <input
+                  type="text"
+                  name="name"
+                  class="ui-inputgroup__control js-input-classes"
+                />
+                <span class="ui-inputgroup__label">Имя<span class="required">*</span></span>
+              </label>
+            </div>
+            <div class="modal-form__row">
+              <label class="ui-inputgroup">
+                <input
+                  type="tel"
+                  name="phone"
+                  class="ui-inputgroup__control js-input-classes js-input-phone"
+                />
+                <span class="ui-inputgroup__label">Телефон<span class="required">*</span></span>
+              </label>
+            </div>
+            <div class="modal-form__row">
+              <label class="ui-inputgroup">
+                <select name="contact" class="ui-inputgroup__control js-input-classes" onchange="document.getElementById('telegram-field').classList[this.options[this.selectedIndex].value === 'Telegram' ? 'remove' : 'add']('hidden')">
+                  <option value=""></option>
+                  <option value="Звонок">Звонок</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Telegram">Telegram</option>
+                </select>
+                <span class="ui-inputgroup__label">Как удобно будет с Вами связаться?<span class="required">*</span></span>
+              </label>
+            </div>
+            <div class="modal-form__row hidden" id="telegram-field">
+              <label class="ui-inputgroup">
+                <input
+                  type="text"
+                  name="telegram"
+                  class="ui-inputgroup__control js-input-classes"
+                />
+                <span class="ui-inputgroup__label">Аккаунт пользователя Telegram, начинается с @</span>
+              </label>
+            </div>
+            <div class="modal-form__row">
+              <label class="ui-inputgroup">
+                <textarea
+                  name="message"
+                  class="ui-inputgroup__control js-input-classes"
+                  rows="6"
+                ></textarea>
+                <span class="ui-inputgroup__label">Комментарий</span>
+              </label>
+            </div>
+            <div class="modal-form__row">
+              <label class="modal-form__approve">
+                <input
+                  type="checkbox"
+                  name="approve"
+                  value="1"
+                  checked
+                  required
+                />
+                <span>
+                  Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, в соответствии с <a href="/policy" target="_blank">Условиями</a><span class="required">*</span>
+                </span>
+              </label>
+            </div>
+            <div class="modal-form__row">
+              <button
+                class="modal-form__submit ui-button-primary ui-button-primary_dark"
+                type="submit"
+              >
+                Отправить
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       <button class="ui-scrollup" data-scroll></button>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
-      <!-- <script src="/vendor/inputmask/old/jquery.inputmask.bundle.min.js"></script> -->
+      
       <script src="/vendor/inputmask/dist/jquery.inputmask.min.js"></script>
       <script src="/vendor/inputmask-multi/js/jquery.inputmask-multi.min.js"></script>
-
+      <script>
+          var inputmaskParams = {
+              phoneCodes: "/vendor/inputmask-multi/data/phone-codes.json"
+          }
+      </script>
 
       <link rel="stylesheet" href="https://master.avernus.ru/landing/Timer/flipdown.min.css" />
       <script src="https://master.avernus.ru/landing/Timer/flipdown.min.js"></script>

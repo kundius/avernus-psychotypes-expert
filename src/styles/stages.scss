@@ -18,6 +18,8 @@
   @include below(md) {
     padding-top: 25px;
     padding-bottom: 37px;
+    background-image: url('../images/section-stages-bg-small.jpg');
+    background-size: 400px 1285px;
   }
 }
 
@@ -36,6 +38,9 @@
 
   @include below(xl) {
     font-size: calc(48px * 0.8);
+  }
+  @include below(lg) {
+    font-size: 36px;
   }
   @include below(md) {
     font-size: 24px;

@@ -26,6 +26,7 @@ body {
   line-height: 1.5;
   font-family: 'Roboto', sans-serif;
 }
+.hidden,
 [hidden] {
   display: none;
 }
@@ -41,6 +42,9 @@ img {
 *:focus {
   outline: none;
 }
+.required {
+  color: red;
+}
 .section-divider {
   height: 16px;
   width: 100%;
@@ -49,9 +53,11 @@ img {
 .page-focusable *:focus {
   outline: 2px solid #ff8a00;
 }
+
 .page {
   overflow: hidden;
 }
+
 .ui-input {
   border: 1px solid #bebebe;
   background: #ffffff;
@@ -66,6 +72,110 @@ img {
     border-color: #ffcb15;
   }
 }
+
+.ui-inputgroup {
+  position: relative;
+  display: block;
+}
+
+.ui-inputgroup .iti__selected-flag {
+  background: #fbfbfb;
+}
+
+.ui-inputgroup__control {
+  border: 1px solid #bebebe;
+  background: #ffffff;
+  font-size: 16px;
+  color: #505661;
+  min-height: 60px;
+  padding: 20px 16px 0;
+  width: 100%;
+  border-radius: 0;
+  box-sizing: border-box;
+  &._focused {
+    border-color: #ffcb15;
+  }
+
+  @include below(md) {
+    font-size: 14px;
+    padding: 16px 12px 0;
+    min-height: 48px;
+  }
+}
+
+textarea.ui-inputgroup__control {
+  padding-top: 32px;
+  padding-bottom: 16px;
+  display: block;
+
+  @include below(md) {
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
+}
+
+select.ui-inputgroup__control {
+  padding-left: 12px;
+  padding-right: 20px;
+
+  @include below(md) {
+    padding-left: 8px;
+    padding-right: 16px;
+  }
+}
+
+.ui-inputgroup__label {
+  position: absolute;
+  left: 16px;
+  top: 22px;
+  font-size: 16px;
+  color: #505661;
+  transition: all .3s ease;
+  pointer-events: none;
+  line-height: 1;
+  opacity: 0.8;
+
+  @include below(md) {
+    font-size: 14px;
+    left: 12px;
+    top: 20px;
+  }
+}
+
+.iti ~ .ui-inputgroup__label {
+  left: 52px;
+}
+
+.iti:has(.ui-inputgroup__control._masked) ~ .ui-inputgroup__label,
+.iti:has(.ui-inputgroup__control._filled) ~ .ui-inputgroup__label,
+.iti:has(.ui-inputgroup__control._focused) ~ .ui-inputgroup__label,
+.ui-inputgroup__control._masked ~ .ui-inputgroup__label,
+.ui-inputgroup__control._filled ~ .ui-inputgroup__label,
+.ui-inputgroup__control._focused ~ .ui-inputgroup__label {
+  top: 12px;
+  font-size: 14px;
+
+  @include below(md) {
+    font-size: 12px;
+    top: 8px;
+  }
+}
+
+.ui-select {
+  border: 1px solid #bebebe;
+  background: #ffffff;
+  font-size: 16px;
+  color: #505661;
+  min-height: 60px;
+  padding: 0 18px;
+  width: 100%;
+  border-radius: 0;
+  box-sizing: border-box;
+  &:focus {
+    border-color: #ffcb15;
+  }
+}
+
 .ui-textarea {
   border: 1px solid #bebebe;
   background: #ffffff;
@@ -79,6 +189,7 @@ img {
     border-color: #ffcb15;
   }
 }
+
 .ui-container {
   margin: 0 auto;
   padding: 0 32px;

@@ -18,6 +18,9 @@
   @include below(md) {
     padding-top: 256px;
     padding-bottom: 25px;
+    background-image: url('../images/section-profiling-bg-small.jpg');
+    background-size: 400px 632px;
+    background-position: 50% 0;
   }
 }
 

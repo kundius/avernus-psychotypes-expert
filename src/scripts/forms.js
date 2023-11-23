@@ -1,27 +1,35 @@
 import "whatwg-fetch";
 import intlTelInput from "intl-tel-input";
-// import IMask from 'imask';
+
+const inputClasses = document.querySelectorAll(".js-input-classes") || [];
+inputClasses.forEach((input) => {
+  input.addEventListener("keyup", (e) =>{
+    if (!!e.target.value) {
+      input.classList.add('_filled')
+    } else {
+      input.classList.remove('_filled')
+    }
+  })
+  input.addEventListener("change", (e) =>{
+    if (!!e.target.value) {
+      input.classList.add('_filled')
+    } else {
+      input.classList.remove('_filled')
+    }
+  })
+  input.addEventListener("focus", (e) =>{
+    input.classList.add('_focused')
+  })
+  input.addEventListener("blur", (e) =>{
+    input.classList.remove('_focused')
+  })
+})
 
 const phoneInputs = document.querySelectorAll(".js-input-phone") || [];
 phoneInputs.forEach((el) => {
-  // const mask = IMask(
-  //   el,
-  //   {
-  //     mask: `+0 (000) 000-00-00`,
-  //     lazy: false,
-  //     overwrite: true
-  //   }
-  // );
-  // mask.value = '+7';
-  el.value = '7'
+  // el.value = '7'
 
   const iti = intlTelInput(el, {
-    // formatOnDisplay: true,
-    // autoFormat: true,
-    // nationalMode: false,
-    // utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
-    // autoPlaceholder: 'aggressive',
-
     initialCountry: "ru",
     preferredCountries: [
       "ru",
@@ -44,18 +52,10 @@ phoneInputs.forEach((el) => {
       $(el).inputmasks($.extend(true, {}, maskOpts, {
         list: listCountries
       }));
-
-
-  //     mask.updateValue();
-  //     mask.updateOptions({
-  //       mask: intlTelInputUtils.getExampleNumber(country.iso2, false, intlTelInputUtils.numberFormat.INTERNATIONAL).replace(/[0-9]/g, "0"),
-  //     })
-  //     mask.cursorPos = country.dialCode.length + 1;
     }
   });
 
   const listCountries = $.masksSort($.masksLoad(inputmaskParams.phoneCodes), ['#'], /[0-9]|#/, "mask");
-  // const listRU = $.masksSort($.masksLoad("/vendor/inputmask-multi/data/phones-ru.json"), ['#'], /[0-9]|#/, "mask");
   const maskOpts = {
       inputmask: {
           definitions: {
@@ -76,9 +76,24 @@ phoneInputs.forEach((el) => {
       listKey: "mask"
   };
 
-  $(el).inputmasks($.extend(true, {}, maskOpts, {
-    list: listCountries,
-  }));
+  let maskIsInit = false
+  el.addEventListener('focus', () => {
+    if (!maskIsInit) {
+      maskIsInit = true;
+      el.value = '7';
+      el.dispatchEvent(new Event('change'));
+      $(el).inputmasks($.extend(true, {}, maskOpts, {
+        list: listCountries,
+      }));
+    }
+    // if (!el.classList.contains('_masked')) {
+    //   el.classList.add('_masked');
+    //   $(el).val('7')
+    //   $(el).inputmasks($.extend(true, {}, maskOpts, {
+    //     list: listCountries,
+    //   }));
+    // }
+  });
 });
 
 jQuery.validator.addMethod(
@@ -134,27 +149,19 @@ function submitForm(form, validator) {
     });
 }
 
-var orderFormValidator = $("#order-form").validate({
+var individualFormValidator = $("#individual-form").validate({
   rules: {
-    email: {
-      email: true,
-      laxEmail: true,
-    },
     name: {
       required: true,
     },
     phone: {
       required: true,
-      // maskedPhone: true,
     },
     approve: {
       required: true,
     },
   },
   messages: {
-    email: {
-      email: "Некорректный e-mail",
-    },
     name: {
       required: "Введите имя",
     },
@@ -169,7 +176,7 @@ var orderFormValidator = $("#order-form").validate({
     error.insertAfter(element.parent());
   },
   submitHandler: function (form) {
-    submitForm(form, orderFormValidator);
+    submitForm(form, individualFormValidator);
   },
 });
 
