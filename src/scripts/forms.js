@@ -173,7 +173,9 @@ var individualFormValidator = $("#individual-form").validate({
     },
   },
   errorPlacement: function (error, element) {
-    if (element.name !== 'action') {
+    if (element.hasClass('js-input-phone')) {
+      error.insertAfter(element.parent().parent());
+    } else if (element.name !== 'action') {
       error.insertAfter(element.parent());
     } else {
       element.after(error);
