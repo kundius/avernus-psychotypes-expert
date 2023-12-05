@@ -18,3 +18,12 @@ document.addEventListener(
   },
   false
 );
+
+const days = document.querySelectorAll('.section-schedule__days-value') || []
+let maxWidth = 0
+days.forEach((item) => {
+  maxWidth = Math.max(maxWidth, item.offsetWidth)
+})
+days.forEach((item) => {
+  item.style.width = `${maxWidth}px`
+})

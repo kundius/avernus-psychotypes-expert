@@ -42,9 +42,6 @@ img {
 *:focus {
   outline: none;
 }
-.required {
-  color: red;
-}
 .section-divider {
   height: 16px;
   width: 100%;
@@ -115,13 +112,12 @@ textarea.ui-inputgroup__control {
 }
 
 select.ui-inputgroup__control {
-  padding-left: 12px;
-  padding-right: 20px;
-
-  @include below(md) {
-    padding-left: 8px;
-    padding-right: 16px;
-  }
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) 50%;
+  background-size: 16px auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+  appearance: none;
+  padding-right: 32px;
 }
 
 .ui-inputgroup__label {
@@ -140,6 +136,24 @@ select.ui-inputgroup__control {
     left: 12px;
     top: 20px;
   }
+}
+
+.ui-required-badge {
+  display: inline;
+  position: relative;
+}
+
+.ui-required-badge::after {
+  content: '';
+  background-position: 50% 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none'%3E%3Cpath stroke='%23ff0000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m12 4 .005 7.993m0 0 7.603-2.465m-7.603 2.465 4.697 6.48m-4.697-6.48-4.707 6.48m4.707-6.48L4.392 9.528'/%3E%3C/svg%3E");
+  background-size: cover;
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: -4px;
+  right: -14px;
 }
 
 .iti ~ .ui-inputgroup__label {
@@ -257,15 +271,6 @@ select.ui-inputgroup__control {
   &:hover {
     border-color: #e0c48f;
     background: transparent;
-  }
-}
-
-.ui-button-primary_filled {
-  color: #000000;
-  background: #e0c48f;
-  &:hover {
-    color: #000000;
-    background: #e0c48f;
   }
 }
 

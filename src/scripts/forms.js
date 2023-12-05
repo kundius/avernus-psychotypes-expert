@@ -27,8 +27,6 @@ inputClasses.forEach((input) => {
 
 const phoneInputs = document.querySelectorAll(".js-input-phone") || [];
 phoneInputs.forEach((el) => {
-  // el.value = '7'
-
   const iti = intlTelInput(el, {
     initialCountry: "ru",
     preferredCountries: [
@@ -58,22 +56,22 @@ phoneInputs.forEach((el) => {
   const listCountries = $.masksSort($.masksLoad(inputmaskParams.phoneCodes), ['#'], /[0-9]|#/, "mask");
   const maskOpts = {
       inputmask: {
-          definitions: {
-              '#': {
-                  validator: "[0-9]",
-                  cardinality: 1
-              }
-          },
-          showMaskOnHover: false,
-          autoUnmask: true,
-          clearMaskOnLostFocus: false,
-          onUnMask: function(maskedValue, unmaskedValue) {
-            return '+'+unmaskedValue;
-          }
-      },
-      match: /[0-9]/,
-      replace: '#',
-      listKey: "mask"
+        definitions: {
+            '#': {
+                validator: "[0-9]",
+                cardinality: 1
+            }
+        },
+        showMaskOnHover: false,
+        autoUnmask: true,
+        clearMaskOnLostFocus: false,
+        onUnMask: function(maskedValue, unmaskedValue) {
+          return '+'+unmaskedValue;
+        }
+    },
+    match: /[0-9]/,
+    replace: '#',
+    listKey: "mask"
   };
 
   let maskIsInit = false
@@ -86,13 +84,6 @@ phoneInputs.forEach((el) => {
         list: listCountries,
       }));
     }
-    // if (!el.classList.contains('_masked')) {
-    //   el.classList.add('_masked');
-    //   $(el).val('7')
-    //   $(el).inputmasks($.extend(true, {}, maskOpts, {
-    //     list: listCountries,
-    //   }));
-    // }
   });
 });
 
@@ -160,6 +151,13 @@ var individualFormValidator = $("#individual-form").validate({
     approve: {
       required: true,
     },
+    telegram: {
+      required: {
+        depends: function(element) {
+          return $("#contact-field").val() === 'Telegram';
+        }
+      }
+    }
   },
   messages: {
     name: {
@@ -171,11 +169,16 @@ var individualFormValidator = $("#individual-form").validate({
     approve: {
       required: "Вы должны согласиться с условиями",
     },
+    telegram: {
+      required: "Введите аккаунт Telegram",
+    },
   },
   errorPlacement: function (error, element) {
     if (element.hasClass('js-input-phone')) {
       error.insertAfter(element.parent().parent());
     } else if (element.hasClass('js-input-classes')) {
+      error.insertAfter(element.parent());
+    } else if (element.parent().prop("tagName") === 'LABEL') {
       error.insertAfter(element.parent());
     } else {
       element.after(error);
